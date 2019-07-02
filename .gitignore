@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-# editor:
-.vscode
-.idea
-
-# mac:
-.DS_Store
-=======
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -18,4 +10,10 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
->>>>>>> 623506b6e705083f9bf95f3b8e825e20228e44e9
+
+# editor:
+.vscode
+.idea
+
+# mac:
+.DS_Store
