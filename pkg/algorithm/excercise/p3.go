@@ -1,5 +1,11 @@
 package excercise
 
+import (
+	"container/heap"
+	"fmt"
+	"interstellar/pkg/algorithm/structure"
+)
+
 //FindDisorderArrayMid 查找无序数组的中位数
 func FindDisorderArrayMid(a []int) float64 {
 	low := 0
@@ -45,4 +51,20 @@ func findDisorderArrayMid(a []int, low int, high int) int {
 	}
 	a[low], a[j] = a[j], a[low]
 	return j
+}
+
+//FindMidByHeap 利用堆获取中位数
+func FindMidByHeap(a []int) float64 {
+	mid := (len(a) + 1) / 2
+	h := structure.HeapInt(a)
+	heap.Init(&h)
+	fmt.Println(h)
+	for i := 0; i < mid; i++ {
+		//fmt.Println("h=", heap.Push(h, structure.HeapInt(a[i])))
+		fmt.Println("hh=", heap.Pop(h))
+	}
+	for i := mid; i < len(a); i++ {
+		//fmt.Println(h.Pop())
+	}
+	return 0
 }
