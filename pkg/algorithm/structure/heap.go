@@ -1,5 +1,7 @@
 package structure
 
+import "fmt"
+
 //HeapInt int类型作为元素的堆
 type HeapInt []int
 
@@ -21,11 +23,12 @@ func (h *HeapInt) Pop() interface{} {
 	old := *h
 	n := len(old)
 	x := old[n-1]
+	fmt.Println("x=", x, "n-1=", n-1, *h)
 	*h = old[0 : n-1]
 	return x
 }
 
-//Push
+//Push 队列里加入值
 func (h *HeapInt) Push(x interface{}) {
 	*h = append(*h, x.(int))
 }
