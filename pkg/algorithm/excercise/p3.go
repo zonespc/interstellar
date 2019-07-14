@@ -55,16 +55,18 @@ func findDisorderArrayMid(a []int, low int, high int) int {
 
 //FindMidByHeap 利用堆获取中位数
 func FindMidByHeap(a []int) float64 {
+	fmt.Println(a)
 	mid := (len(a) + 1) / 2
-	h := structure.HeapInt(a)
+	h := structure.HeapInt(a[0:mid])
 	heap.Init(&h)
-	fmt.Println(h)
-	for i := 0; i < mid; i++ {
-		//fmt.Println("h=", heap.Push(h, structure.HeapInt(a[i])))
-		fmt.Println("hh=", heap.Pop(h))
-	}
+	fmt.Println("h =", h)
+	midNum := heap.Pop(&h)
 	for i := mid; i < len(a); i++ {
-		//fmt.Println(h.Pop())
+		if a[i] < midNum.(int) {
+			heap.Push(&h, a[i])
+			midNum = heap.Pop(&h)
+		}
 	}
-	return 0
+	fmt.Println("Mid =", midNum)
+	return float64(midNum.(int))
 }

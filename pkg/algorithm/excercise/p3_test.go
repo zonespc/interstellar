@@ -11,6 +11,6 @@ func TestFindDisorderArrayMid(t *testing.T) {
 }
 
 func TestFindMidByHeap(t *testing.T) {
-	a := []int{1, 5, 4, 3, 2}
+	a := []int{1, 5, 4, 0, 2}
 	FindMidByHeap(a)
 }

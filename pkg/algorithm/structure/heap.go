@@ -1,7 +1,5 @@
 package structure
 
-import "fmt"
-
 //HeapInt int类型作为元素的堆
 type HeapInt []int
 
@@ -10,7 +8,7 @@ func (h HeapInt) Len() int { return len(h) }
 
 //Less 比较两个数值
 func (h HeapInt) Less(i, j int) bool {
-	return h[i] < h[j]
+	return h[i] > h[j]
 }
 
 //Seap 交换两个数值
@@ -23,7 +21,6 @@ func (h *HeapInt) Pop() interface{} {
 	old := *h
 	n := len(old)
 	x := old[n-1]
-	fmt.Println("x=", x, "n-1=", n-1, *h)
 	*h = old[0 : n-1]
 	return x
 }
