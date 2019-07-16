@@ -22,6 +22,26 @@ func NewBinaryTreeNode(val int) *BinaryTreeNode {
 	return btNode
 }
 
+//Value 返回节点值
+func (bt *BinaryTreeNode) Value() int {
+	return bt.val
+}
+
+//SetValue 设置节点值
+func (bt *BinaryTreeNode) SetValue(val int) {
+	bt.val = val
+}
+
+//SetLeftNode 设置左节点
+func (bt *BinaryTreeNode) SetLeftNode(left *BinaryTreeNode) {
+	bt.left = left
+}
+
+//SetRightNode 设置右节点
+func (bt *BinaryTreeNode) SetRightNode(right *BinaryTreeNode) {
+	bt.right = right
+}
+
 //ConstructTree 根据数组按层次构建二叉树
 func ConstructTree(a []int) *BinaryTreeNode {
 	if a == nil {
