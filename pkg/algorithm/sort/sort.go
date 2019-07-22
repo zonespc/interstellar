@@ -1,4 +1,4 @@
-package sorting
+package sort
 
 //Sorting is an interface for sorting list
 type Sorting interface {
